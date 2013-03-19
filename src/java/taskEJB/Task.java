@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import userEJB.User;
 
@@ -35,7 +37,9 @@ public class Task implements Serializable {
     private Date dueDate;
     private boolean completionFlag;
     
+    @ManyToOne
     private User requestingUser;
+    @OneToOne
     private User assignedUser;
     //requesting user and an assigned user
     
