@@ -5,10 +5,12 @@
 package userEJB;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -22,6 +24,9 @@ public class User implements Serializable {
     private Long id;
     private String username;
     private String password;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date creationTime;
     
     public User(){
         
@@ -47,6 +52,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(Date creationTime) {
+        this.creationTime = creationTime;
     }
     
     
