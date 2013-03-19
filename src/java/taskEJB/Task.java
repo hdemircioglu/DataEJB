@@ -44,7 +44,13 @@ public class Task implements Serializable {
     }
     
     public Task(int priority, String title, String optionalNote, Date dueDate, boolean completionFlag, User requestingUser, User assignedUser ){
-        
+        this.priority = priority;
+        this.title = title;
+        this.optionalNote = optionalNote;
+        this.dueDate = dueDate;
+        this.completionFlag = completionFlag;
+        this.requestingUser = requestingUser;
+        this.assignedUser = assignedUser;
     }
 
     public int getPriority() {
@@ -103,8 +109,6 @@ public class Task implements Serializable {
         this.assignedUser = assignedUser;
     }
     
-    
-    
     public Long getId() {
         return id;
     }
@@ -137,5 +141,6 @@ public class Task implements Serializable {
     public String toString() {
         return "taskEJB.Task[ id=" + id + " ]";
     }
+
     
 }
