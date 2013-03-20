@@ -37,9 +37,9 @@ public class Task implements Serializable {
     private Date dueDate;
     private boolean completionFlag;
     
-    @ManyToOne
+   // @ManyToOne
     private User requestingUser;
-    @OneToOne
+   // @OneToOne
     private User assignedUser;
     //requesting user and an assigned user
     
@@ -47,14 +47,14 @@ public class Task implements Serializable {
         
     }
     
-    public Task(int priority, String title, String optionalNote, Date dueDate, boolean completionFlag, User requestingUser, User assignedUser ){
+    public Task(int priority, String title, String optionalNote, Date dueDate, boolean completionFlag){
         this.priority = priority;
         this.title = title;
         this.optionalNote = optionalNote;
         this.dueDate = dueDate;
         this.completionFlag = completionFlag;
-        this.requestingUser = requestingUser;
-        this.assignedUser = assignedUser;
+      //  this.requestingUser = requestingUser;
+      //  this.assignedUser = assignedUser;
     }
 
     public int getPriority() {
